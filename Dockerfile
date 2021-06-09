@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 RUN go mod init hello
-RUN go build -o hello
+RUN go build -ldflags "-s -w" -o hello
 
 # Prod
 FROM scratch
