@@ -8,7 +8,7 @@ RUN go mod init hello
 RUN go build -o hello
 
 # Prod
-FROM alpine:latest
+FROM scratch
 
 WORKDIR /root/
 COPY --from=builder /app/hello .
